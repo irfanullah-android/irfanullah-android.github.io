@@ -1,595 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Irfan Ullah — Senior Android Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-:root {
-  --android: #3DDC84;
-  --android-dim: #2AB86A;
-  --android-dark: #0F9955;
-  --gold: #F5C518;
-  --gold-dim: rgba(245,197,24,0.12);
-  --bg: #070B0F;
-  --bg2: #0D1117;
-  --bg3: #161D27;
-  --bg4: #1C2535;
-  --border: rgba(61,220,132,0.12);
-  --border2: rgba(61,220,132,0.25);
-  --text: #EDF2EE;
-  --muted: #6B8F7E;
-  --muted2: #8FADA0;
-  --card: #0F1820;
-  --font: 'Space Grotesk', sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden}
-::-webkit-scrollbar{width:3px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--android-dark);border-radius:2px}
+<div align="center">
 
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 52px;
-  background:rgba(7,11,15,0.92);
-  backdrop-filter:blur(20px);
-  border-bottom:0.5px solid var(--border);
-}
-.nav-logo{font-family:var(--mono);font-size:13px;color:var(--android);letter-spacing:0.06em}
-.nav-links{display:flex;gap:36px;align-items:center}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.02em;transition:color .2s}
-.nav-links a:hover{color:var(--android)}
-.nav-hire{
-  padding:8px 22px;
-  background:var(--android);
-  color:#070B0F !important;
-  border-radius:6px;font-size:13px !important;font-weight:700 !important;
-  letter-spacing:0.04em;transition:all .2s !important
-}
-.nav-hire:hover{background:#5AE89A !important;transform:translateY(-1px)}
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A0A0F,50:1A1A2E,100:3DDC84&height=180&section=header&text=Irfanullah&fontSize=68&fontColor=ffffff&fontAlignY=42&desc=Senior%20Android%20Engineer%20%E2%80%94%20Kotlin%20%7C%20Jetpack%20Compose%20%7C%20Clean%20Architecture&descAlignY=62&descSize=15&animation=fadeIn" />
 
-.hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding:120px 52px 80px;position:relative;overflow:hidden;
+</div>
+
+<br/>
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/irfan-ullah-521b5a250)&nbsp;
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:irfanullah.android@gmail.com)&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/irfanullah-android)&nbsp;
+[![Profile Views](https://komarev.com/ghpvc/?username=irfanullah-android&color=3DDC84&style=flat-square&label=Views)](https://github.com/irfanullah-android)
+
+</div>
+
+---
+
+<div align="center">
+
+```kotlin
+object Irfanullah {
+
+    val role       = "Android Engineer"
+    val location   = "Islamabad, Pakistan 🇵🇰"
+    val focus      = listOf("Clean Architecture", "MVVM", "Jetpack Compose")
+    val passionFor = "Crafting apps that feel fast, look sharp, and scale effortlessly."
+
 }
-.hero-bg-orb1{
-  position:absolute;top:-150px;right:-150px;
-  width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(61,220,132,0.06) 0%,transparent 65%);
-  animation:orb 8s ease-in-out infinite;pointer-events:none;
-}
-.hero-bg-orb2{
-  position:absolute;bottom:-100px;left:-50px;
-  width:350px;height:350px;border-radius:50%;
-  background:radial-gradient(circle,rgba(245,197,24,0.04) 0%,transparent 65%);
-  pointer-events:none;
-}
-.hero-bg-grid{
-  position:absolute;inset:0;
-  background-image:linear-gradient(rgba(61,220,132,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(61,220,132,0.025) 1px,transparent 1px);
-  background-size:60px 60px;pointer-events:none;
-}
-@keyframes orb{0%,100%{transform:scale(1) translate(0,0)}50%{transform:scale(1.08) translate(-20px,20px)}}
+```
 
-.hero-content{max-width:680px;position:relative;z-index:1}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:var(--mono);font-size:11px;color:var(--android);
-  background:rgba(61,220,132,0.06);border:0.5px solid var(--border2);
-  padding:7px 16px;border-radius:20px;margin-bottom:28px;letter-spacing:0.1em;
-}
-.pulse-dot{width:7px;height:7px;background:var(--android);border-radius:50%;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(61,220,132,0.4)}50%{opacity:0.5;box-shadow:0 0 0 4px rgba(61,220,132,0)}}
+</div>
 
-.hero h1{font-size:clamp(40px,6.5vw,68px);font-weight:700;line-height:1.04;letter-spacing:-0.035em;margin-bottom:8px}
-.hero h1 .line2{color:var(--android)}
-.hero h1 .line3{color:var(--muted2);font-weight:400;font-size:clamp(22px,3.5vw,38px)}
+---
 
-.hero-divider{width:48px;height:2px;background:var(--android);border-radius:1px;margin:20px 0 24px;opacity:0.6}
+## Stack
 
-.hero-bio{font-size:17px;color:var(--muted2);line-height:1.7;max-width:520px;margin-bottom:36px}
-.hero-bio strong{color:var(--text);font-weight:600}
-.hero-bio .highlight{color:var(--android);font-weight:500}
+<div align="center">
 
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:52px}
-.btn-green{
-  padding:13px 28px;background:var(--android);color:#070B0F;
-  border:none;border-radius:7px;font-size:14px;font-weight:700;
-  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
-  transition:all .2s;font-family:var(--font);letter-spacing:0.02em;
-}
-.btn-green:hover{background:#5AE89A;transform:translateY(-2px)}
-.btn-ghost{
-  padding:13px 28px;background:transparent;color:var(--text);
-  border:0.5px solid rgba(255,255,255,0.12);border-radius:7px;font-size:14px;font-weight:500;
-  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
-  transition:all .2s;font-family:var(--font);
-}
-.btn-ghost:hover{border-color:var(--android);color:var(--android)}
+**Core**
 
-.hero-metrics{
-  display:flex;gap:0;
-  border:0.5px solid var(--border);border-radius:14px;
-  background:var(--card);overflow:hidden;
-  max-width:480px;
-}
-.metric{flex:1;padding:20px 24px;text-align:center;position:relative}
-.metric+.metric::before{content:'';position:absolute;left:0;top:20%;height:60%;width:0.5px;background:var(--border)}
-.metric-num{font-size:30px;font-weight:700;color:var(--android);line-height:1;font-family:var(--mono)}
-.metric-label{font-size:11px;color:var(--muted);margin-top:5px;letter-spacing:0.04em;text-transform:uppercase}
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Android](https://img.shields.io/badge/Android%20SDK-3DDC84?style=flat-square&logo=android&logoColor=white)
 
-.hero-visual{
-  position:absolute;right:52px;top:50%;transform:translateY(-50%);
-  z-index:1;
-}
-.phone-wrap{position:relative}
-.phone{
-  width:185px;height:360px;
-  background:var(--bg3);
-  border:0.5px solid var(--border2);
-  border-radius:34px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.phone-notch{
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:70px;height:6px;background:var(--bg);border-radius:0 0 8px 8px;z-index:2;
-}
-.phone-screen{
-  width:90%;height:87%;
-  background:linear-gradient(160deg,#132213 0%,#0C160C 60%,#091410 100%);
-  border-radius:24px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:8px;padding:20px;
-}
-.phone-icon{font-size:42px;animation:float 3.5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.phone-name{font-family:var(--mono);font-size:9px;color:var(--android);letter-spacing:0.06em}
-.code-lines{width:100%;margin-top:6px;display:flex;flex-direction:column;gap:3px}
-.cl{font-family:var(--mono);font-size:8px;color:rgba(61,220,132,0.4)}
-.cl.k{color:rgba(100,180,255,0.5)}
-.cl.s{color:rgba(255,180,100,0.45)}
+**Architecture**
 
-.phone-glow{
-  position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);
-  width:120px;height:80px;border-radius:50%;
-  background:radial-gradient(circle,rgba(61,220,132,0.15) 0%,transparent 70%);
-  filter:blur(10px);pointer-events:none;
-}
+![MVVM](https://img.shields.io/badge/MVVM-0F6E56?style=flat-square)
+![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-1D9E75?style=flat-square)
+![Repository Pattern](https://img.shields.io/badge/Repository%20Pattern-3DDC84?style=flat-square)
 
-section{padding:96px 52px}
-.sec-label{font-family:var(--mono);font-size:11px;color:var(--android);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;opacity:0.8}
-.sec-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-0.025em;margin-bottom:14px}
-.sec-sub{font-size:15px;color:var(--muted2);max-width:520px;line-height:1.65;margin-bottom:56px}
+**Jetpack**
 
-#skills{background:var(--bg2)}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.skill-card{
-  background:var(--card);border:0.5px solid var(--border);
-  border-radius:14px;padding:22px;
-  transition:all .25s;cursor:default;
-}
-.skill-card:hover{border-color:var(--android);transform:translateY(-3px);background:var(--bg3)}
-.skill-card-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.skill-icon{font-size:18px;width:36px;height:36px;border-radius:9px;background:rgba(61,220,132,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.skill-card-title{font-size:12px;font-weight:600;color:var(--android);font-family:var(--mono);letter-spacing:0.06em}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tag{
-  padding:4px 11px;border-radius:5px;font-size:11px;font-weight:500;
-  background:rgba(61,220,132,0.06);border:0.5px solid rgba(61,220,132,0.18);color:var(--muted2);
-  transition:all .2s;
-}
-.tag:hover{background:rgba(61,220,132,0.15);color:var(--text);border-color:var(--android)}
-.tag.pro{border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.06);color:#D4A800}
+![Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![ViewModel](https://img.shields.io/badge/ViewModel-3DDC84?style=flat-square&logo=android&logoColor=white)
+![Room](https://img.shields.io/badge/Room%20DB-FF6D00?style=flat-square&logo=sqlite&logoColor=white)
+![Navigation](https://img.shields.io/badge/Navigation-7F52FF?style=flat-square&logo=android&logoColor=white)
+![Coroutines](https://img.shields.io/badge/Coroutines%20%26%20Flow-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 
-#projects{background:var(--bg)}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
-.proj-card{
-  background:var(--card);border:0.5px solid var(--border);
-  border-radius:18px;overflow:hidden;
-  transition:all .25s;position:relative;
-}
-.proj-card:hover{border-color:var(--android);transform:translateY(-5px)}
-.proj-top{padding:24px 24px 16px;display:flex;align-items:flex-start;justify-content:space-between}
-.proj-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.proj-gh{
-  width:32px;height:32px;border-radius:7px;
-  border:0.5px solid var(--border);background:var(--bg3);
-  display:flex;align-items:center;justify-content:center;
-  text-decoration:none;font-size:13px;color:var(--muted);transition:all .2s;
-}
-.proj-gh:hover{border-color:var(--android);color:var(--android)}
-.proj-body{padding:0 24px 24px}
-.proj-name{font-size:17px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em}
-.proj-desc{font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:14px}
-.proj-pills{display:flex;flex-wrap:wrap;gap:5px}
-.pill{
-  padding:2px 9px;font-size:10px;font-weight:600;
-  border-radius:4px;font-family:var(--mono);
-  background:rgba(61,220,132,0.06);border:0.5px solid rgba(61,220,132,0.15);color:var(--android);
-}
+**Networking & Backend**
 
-#experience{background:var(--bg2)}
-.exp-timeline{position:relative;padding-left:24px}
-.exp-timeline::before{content:'';position:absolute;left:3px;top:8px;bottom:8px;width:1px;background:var(--border)}
-.exp-item{position:relative;margin-bottom:20px}
-.exp-item::before{content:'';position:absolute;left:-24px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--android);border:2px solid var(--bg2)}
-.exp-card{
-  background:var(--card);border:0.5px solid var(--border);
-  border-radius:14px;padding:28px 32px;
-  transition:border-color .2s;
-}
-.exp-card:hover{border-color:var(--border2)}
-.exp-meta{display:flex;align-items:center;gap:14px;margin-bottom:12px;flex-wrap:wrap}
-.exp-year{font-family:var(--mono);font-size:11px;color:var(--android);background:rgba(61,220,132,0.08);padding:3px 10px;border-radius:4px;letter-spacing:0.05em}
-.exp-type{font-size:11px;color:var(--muted);font-family:var(--mono)}
-.exp-title{font-size:17px;font-weight:600;margin-bottom:8px}
-.exp-desc{font-size:13px;color:var(--muted2);line-height:1.65}
-.exp-highlights{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
-.exp-tag{padding:3px 10px;font-size:11px;border-radius:4px;background:var(--bg3);color:var(--muted2);border:0.5px solid var(--border);font-family:var(--mono)}
+![Retrofit](https://img.shields.io/badge/Retrofit-48B983?style=flat-square)
+![OkHttp](https://img.shields.io/badge/OkHttp-009688?style=flat-square)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 
-#services{background:var(--bg)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.service-card{
-  background:var(--card);border:0.5px solid var(--border);
-  border-radius:14px;padding:24px;transition:all .25s;
-}
-.service-card:hover{border-color:var(--android);transform:translateY(-2px)}
-.service-icon{font-size:24px;margin-bottom:12px}
-.service-title{font-size:14px;font-weight:600;margin-bottom:6px;color:var(--text)}
-.service-desc{font-size:12px;color:var(--muted2);line-height:1.6}
-.service-price{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--android)}
+**Tools**
 
-#contact{background:var(--bg2)}
-.contact-inner{max-width:600px;margin:0 auto;text-align:center}
-.contact-card{
-  background:var(--card);border:0.5px solid var(--border);
-  border-radius:22px;padding:44px;margin-top:36px;
-}
-.clinks{display:flex;flex-direction:column;gap:12px}
-.clink{
-  display:flex;align-items:center;gap:14px;
-  padding:15px 18px;border-radius:11px;
-  border:0.5px solid var(--border);background:var(--bg3);
-  text-decoration:none;color:var(--text);transition:all .2s;
-}
-.clink:hover{border-color:var(--android);background:rgba(61,220,132,0.04)}
-.clink-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.clink-info{text-align:left}
-.clink-label{font-size:10px;color:var(--muted);font-family:var(--mono);letter-spacing:0.08em}
-.clink-val{font-size:13px;font-weight:500;color:var(--text);margin-top:2px}
-.clink-arrow{margin-left:auto;color:var(--muted);font-size:17px;transition:transform .2s}
-.clink:hover .clink-arrow{transform:translateX(4px);color:var(--android)}
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=flat-square&logo=androidstudio&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Hilt](https://img.shields.io/badge/Hilt%20DI-2196F3?style=flat-square&logo=google&logoColor=white)
 
-footer{
-  padding:24px 52px;
-  border-top:0.5px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  background:var(--bg2);
-}
-.fc{font-size:12px;color:var(--muted);font-family:var(--mono)}
-.fc span{color:var(--android)}
-.fc .gold{color:var(--gold)}
+</div>
 
-@media(max-width:960px){
-  nav{padding:14px 20px}
-  .nav-links{gap:20px}
-  .hero{padding:100px 20px 60px}
-  .hero-visual{display:none}
-  section{padding:72px 20px}
-  footer{padding:20px;flex-direction:column;gap:8px;text-align:center}
-}
-@media(max-width:600px){
-  .nav-links a:not(.nav-hire){display:none}
-  .hero-metrics{flex-direction:column}
-  .metric+.metric::before{left:10%;top:0;height:0.5px;width:80%}
-}
-</style>
-</head>
-<body>
+---
 
-<nav>
-  <div class="nav-logo">irfanullah.dev</div>
-  <div class="nav-links">
-    <a href="#skills">Stack</a>
-    <a href="#projects">Work</a>
-    <a href="#experience">Journey</a>
-    <a href="#services">Services</a>
-    <a href="mailto:irfanullah03330@gmail.com" class="nav-hire">Hire Me →</a>
-  </div>
-</nav>
+## What I Build
 
-<section class="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-bg-orb1"></div>
-  <div class="hero-bg-orb2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="pulse-dot"></span>
-      Available for freelance · Remote worldwide
-    </div>
-    <h1>
-      <span class="line1">Irfan Ullah</span><br/>
-      <span class="line2">Android Expert</span><br/>
-      <span class="line3">Freelance Developer</span>
-    </h1>
-    <div class="hero-divider"></div>
-    <p class="hero-bio">
-      I build <strong>production-grade Android apps</strong> that ship, scale, and earn.
-      Kotlin &amp; Java specialist with deep expertise in
-      <span class="highlight">Jetpack Compose, MVVM, Firebase</span>
-      and Play Store publishing. Clean code. Real users. Delivered on time.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn-green">View My Work →</a>
-      <a href="mailto:irfanullah03330@gmail.com" class="btn-ghost">✉ Start a Project</a>
-    </div>
-    <div class="hero-metrics">
-      <div class="metric">
-        <div class="metric-num">2+</div>
-        <div class="metric-label">Years</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">7+</div>
-        <div class="metric-label">Apps Built</div>
-      </div>
-      <div class="metric">
-        <div class="metric-num">100%</div>
-        <div class="metric-label">Remote Ready</div>
-      </div>
-    </div>
-  </div>
+<div align="center">
 
-  <div class="hero-visual">
-    <div class="phone-wrap">
-      <div class="phone">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-icon">🤖</div>
-          <div class="phone-name">IRFAN ULLAH</div>
-          <div class="code-lines">
-            <div class="cl k">@Composable</div>
-            <div class="cl">fun App() {</div>
-            <div class="cl s">&nbsp;&nbsp;// building...</div>
-            <div class="cl">}</div>
-          </div>
-        </div>
-      </div>
-      <div class="phone-glow"></div>
-    </div>
-  </div>
-</section>
+| | Area | Details |
+|:-:|------|---------|
+| 📱 | **Production Android Apps** | End-to-end apps with polished UI, solid architecture, and real-world deployment |
+| 🏗️ | **Clean Architecture** | Layered codebases — data, domain, presentation — that survive scale |
+| 🔥 | **Firebase** | Auth, Firestore, Realtime DB, Cloud Messaging, Remote Config |
+| 🌐 | **REST APIs** | Retrofit + OkHttp with interceptors, error handling, and clean repository layer |
+| 🗄️ | **Offline-First** | Room DB with migrations, DAOs, and local caching strategies |
+| 🎨 | **Jetpack Compose UI** | Material 3, custom composables, smooth animations, adaptive layouts |
+| 💰 | **Monetization** | AdMob banner, interstitial & rewarded ads with proper lifecycle management |
 
-<section id="skills">
-  <div class="sec-label">// tech stack</div>
-  <h2 class="sec-title">What I Master</h2>
-  <p class="sec-sub">Full Android development stack — from architecture to Play Store. Senior-level depth in every layer.</p>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">⚡</div><div class="skill-card-title">Core Languages</div></div>
-      <div class="tags">
-        <span class="tag pro">Kotlin</span><span class="tag pro">Java</span>
-        <span class="tag">XML Layouts</span><span class="tag">Kotlin DSL</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">🏗️</div><div class="skill-card-title">Architecture</div></div>
-      <div class="tags">
-        <span class="tag pro">MVVM</span><span class="tag pro">Clean Architecture</span>
-        <span class="tag">MVI</span><span class="tag">Repository Pattern</span><span class="tag">SOLID</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">🎨</div><div class="skill-card-title">Jetpack / UI</div></div>
-      <div class="tags">
-        <span class="tag pro">Jetpack Compose</span><span class="tag">ViewModel</span>
-        <span class="tag">LiveData</span><span class="tag">Navigation</span>
-        <span class="tag">Room DB</span><span class="tag">WorkManager</span><span class="tag">DataStore</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">🌐</div><div class="skill-card-title">Backend &amp; APIs</div></div>
-      <div class="tags">
-        <span class="tag pro">Firebase</span><span class="tag pro">Retrofit</span>
-        <span class="tag">REST APIs</span><span class="tag">OkHttp</span>
-        <span class="tag">Firestore</span><span class="tag">Auth</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">💰</div><div class="skill-card-title">Monetization &amp; Deploy</div></div>
-      <div class="tags">
-        <span class="tag pro">AdMob</span><span class="tag pro">Play Store</span>
-        <span class="tag">In-App Purchase</span><span class="tag">Gradle</span><span class="tag">CI/CD</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-head"><div class="skill-icon">🚀</div><div class="skill-card-title">Performance &amp; DI</div></div>
-      <div class="tags">
-        <span class="tag pro">Coroutines</span><span class="tag pro">Kotlin Flow</span>
-        <span class="tag pro">Hilt / Dagger</span><span class="tag">Glide / Coil</span><span class="tag">Profiler</span>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
-<section id="projects">
-  <div class="sec-label">// selected work</div>
-  <h2 class="sec-title">Apps I've Shipped</h2>
-  <p class="sec-sub">Real projects, real users. Each built with production quality and clean architecture.</p>
-  <div class="proj-grid">
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(61,220,132,0.1)">🎵</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">Music Player</div>
-        <div class="proj-desc">Full-featured local music player with playlist management, equalizer, background playback service, and smooth animated UI.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">MediaPlayer</span><span class="pill">Room DB</span><span class="pill">Foreground Service</span></div>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(255,200,50,0.1)">📷</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">QR Code Scanner</div>
-        <div class="proj-desc">Lightning-fast QR &amp; barcode scanner with history, bulk scan, and deep link handling using ML Kit &amp; CameraX.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">ML Kit</span><span class="pill">CameraX</span><span class="pill">Firebase</span></div>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(80,200,255,0.1)">💪</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">Fitness Tracker</div>
-        <div class="proj-desc">Workout tracker with exercise library, custom routines, MPAndroidChart progress graphs, and step counter.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">MVVM</span><span class="pill">Room</span><span class="pill">MPAndroidChart</span></div>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(255,100,100,0.1)">📄</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">All Document Reader</div>
-        <div class="proj-desc">Universal document viewer — PDF, Word, Excel, PowerPoint — with search, bookmarks and AdMob monetization.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">PDF Renderer</span><span class="pill">File Provider</span><span class="pill">AdMob</span></div>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(160,100,255,0.1)">⬇️</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">Video Downloader</div>
-        <div class="proj-desc">Multi-platform video downloader with quality selection, WorkManager queue, and built-in ExoPlayer.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">Retrofit</span><span class="pill">WorkManager</span><span class="pill">ExoPlayer</span></div>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-top">
-        <div class="proj-icon" style="background:rgba(61,220,132,0.1)">🤖</div>
-        <a href="https://github.com/irfanullah-android" class="proj-gh">↗</a>
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">Photo Fix AI</div>
-        <div class="proj-desc">AI-powered photo enhancer — auto fix, noise reduction, upscaling and smart filters via TensorFlow Lite.</div>
-        <div class="proj-pills"><span class="pill">Kotlin</span><span class="pill">ML Kit</span><span class="pill">TensorFlow Lite</span><span class="pill">Coroutines</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+---
 
-<section id="experience">
-  <div class="sec-label">// experience</div>
-  <h2 class="sec-title">Journey So Far</h2>
-  <p class="sec-sub">2+ years of hands-on Android development — from first line of Java to production Kotlin apps.</p>
-  <div class="exp-timeline">
-    <div class="exp-item">
-      <div class="exp-card">
-        <div class="exp-meta">
-          <span class="exp-year">2023 — Present</span>
-          <span class="exp-type">Freelance · Remote</span>
-        </div>
-        <div class="exp-title">Senior Android Developer (Freelance)</div>
-        <div class="exp-desc">Building and shipping production Android apps for clients and personal products. Full ownership — UI with Jetpack Compose, backend with Firebase, REST APIs, AdMob monetization, and Play Store deployment. Focus on clean architecture and maintainable, scalable code.</div>
-        <div class="exp-highlights">
-          <span class="exp-tag">Jetpack Compose</span><span class="exp-tag">Firebase</span>
-          <span class="exp-tag">MVVM</span><span class="exp-tag">Play Store</span><span class="exp-tag">AdMob</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-card">
-        <div class="exp-meta">
-          <span class="exp-year">2022 — 2023</span>
-          <span class="exp-type">Self-taught · Foundation</span>
-        </div>
-        <div class="exp-title">Android Development — Learning &amp; First Projects</div>
-        <div class="exp-desc">Started with Java, transitioned to Kotlin. Built first real projects — music player, document reader. Mastered MVVM architecture, Room database, Firebase integration, and REST API consumption hands-on.</div>
-        <div class="exp-highlights">
-          <span class="exp-tag">Java → Kotlin</span><span class="exp-tag">Room DB</span>
-          <span class="exp-tag">Firebase</span><span class="exp-tag">MVVM</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+## GitHub Stats
 
-<section id="services">
-  <div class="sec-label">// what I offer</div>
-  <h2 class="sec-title">Freelance Services</h2>
-  <p class="sec-sub">End-to-end Android development — from idea to published app. You focus on your business, I handle the code.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <div class="service-title">App Development</div>
-      <div class="service-desc">Full Android app from scratch — UI, backend, APIs, testing, and Play Store submission.</div>
-      <div class="service-price">Custom project →</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <div class="service-title">App Revamp / Bug Fix</div>
-      <div class="service-desc">Refactor legacy code, fix crashes, upgrade to modern Jetpack &amp; Kotlin architecture.</div>
-      <div class="service-price">Hourly / Fixed →</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💰</div>
-      <div class="service-title">Monetization Setup</div>
-      <div class="service-desc">AdMob integration, in-app purchases, subscription billing — maximize your app revenue.</div>
-      <div class="service-price">Fixed price →</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🚀</div>
-      <div class="service-title">Play Store Launch</div>
-      <div class="service-desc">Full publishing setup — store listing, ASO, screenshots, release management.</div>
-      <div class="service-price">One-time →</div>
-    </div>
-  </div>
-</section>
+<div align="center">
 
-<section id="contact">
-  <div class="contact-inner">
-    <div class="sec-label" style="text-align:center">// contact</div>
-    <h2 class="sec-title" style="text-align:center">Let's Build Together</h2>
-    <p class="sec-sub" style="text-align:center;margin:0 auto">Have a project? Open to freelance work, long-term contracts, and collaborations worldwide.</p>
-    <div class="contact-card">
-      <div class="clinks">
-        <a href="mailto:irfanullah03330@gmail.com" class="clink">
-          <div class="clink-icon" style="background:rgba(234,67,53,0.1)">✉</div>
-          <div class="clink-info"><div class="clink-label">EMAIL</div><div class="clink-val">irfanullah03330@gmail.com</div></div>
-          <span class="clink-arrow">→</span>
-        </a>
-        <a href="https://www.linkedin.com/in/irfan-ullah-521b5a250" target="_blank" class="clink">
-          <div class="clink-icon" style="background:rgba(0,119,181,0.1)">💼</div>
-          <div class="clink-info"><div class="clink-label">LINKEDIN</div><div class="clink-val">irfan-ullah-521b5a250</div></div>
-          <span class="clink-arrow">→</span>
-        </a>
-        <a href="https://github.com/irfanullah-android" target="_blank" class="clink">
-          <div class="clink-icon" style="background:rgba(255,255,255,0.04)">⌨</div>
-          <div class="clink-info"><div class="clink-label">GITHUB</div><div class="clink-val">irfanullah-android</div></div>
-          <span class="clink-arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+<img src="https://github-readme-stats.vercel.app/api?username=irfanullah-android&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" height="160" />
+&nbsp;&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=irfanullah-android&layout=compact&theme=tokyonight&hide_border=true&langs_count=5" height="160" />
 
-<footer>
-  <div class="fc">Built by <span>Irfan Ullah</span> · Islamabad, Pakistan 🇵🇰</div>
-  <div class="fc"><span>Senior Android Developer</span> · <span class="gold">Available for Freelance</span></div>
-</footer>
+</div>
 
-</body>
-</html>
+<div align="center">
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=irfanullah-android&theme=tokyonight&hide_border=true" height="150" />
+
+</div>
+
+---
+
+## Let's Work Together
+
+<div align="center">
+
+Open to **freelance projects**, **full-time roles**, and **open-source collaboration**.
+
+[![Hire Me](https://img.shields.io/badge/Hire%20Me-3DDC84?style=for-the-badge&logo=gmail&logoColor=black)](mailto:irfanullah.android@gmail.com)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/irfan-ullah-521b5a250)
+
+</div>
+
+---
+
+<div align="center">
+
+<sub>*"Make it work. Make it right. Make it fast."*</sub>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3DDC84,100:0A0A0F&height=80&section=footer" />
+
+</div>
