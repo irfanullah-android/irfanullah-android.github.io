@@ -1,141 +1,644 @@
-<div align="center">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Irfan Ullah — Android Developer specializing in Kotlin, Jetpack Compose, Firebase & Clean Architecture. Available for freelance & full-time roles." />
+  <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Firebase, MVVM, Clean Architecture, Islamabad, Pakistan" />
+  <meta name="author" content="Irfan Ullah" />
+  <meta property="og:title" content="Irfan Ullah — Android Developer" />
+  <meta property="og:description" content="Building production-grade Android apps with Kotlin, Jetpack Compose & Firebase." />
+  <meta property="og:type" content="website" />
+  <title>Irfan Ullah — Android Developer</title>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:3DDC84,100:0F6E56&height=200&section=header&text=Irfanullah&fontSize=60&fontColor=ffffff&fontAlignY=38&desc=Android%20Developer%20%7C%20Kotlin%20%7C%20Jetpack%20Compose%20%7C%20Firebase&descAlignY=60&descSize=16&animation=fadeIn" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3DDC84&center=true&vCenter=true&width=600&lines=Building+Production-Ready+Android+Apps;Clean+Architecture+%7C+MVVM+%7C+SOLID;Kotlin+%7C+Jetpack+Compose+%7C+Coroutines;Open+to+Freelance+%26+Full-Time+Roles)](https://git.io/typing-svg)
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<br/>
+    :root {
+      --bg:        #0d1117;
+      --bg2:       #161b22;
+      --bg3:       #21262d;
+      --border:    #30363d;
+      --green:     #3ddc84;
+      --green-dim: #1d9e5c;
+      --green-glow:#3ddc8430;
+      --text:      #e6edf3;
+      --text-sec:  #8b949e;
+      --text-dim:  #656d76;
+      --radius:    12px;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', sans-serif;
+    }
 
-[![Profile Views](https://komarev.com/ghpvc/?username=irfanullah-android&color=3DDC84&style=flat-square&label=Profile+Views)](https://github.com/irfanullah-android)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:irfanullah.android@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/irfan-ullah-521b5a250)
-[![GitHub followers](https://img.shields.io/github/followers/irfanullah-android?style=flat-square&color=3DDC84&label=Followers)](https://github.com/irfanullah-android)
+    html { scroll-behavior: smooth; }
 
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--mono); font-size: 1rem; font-weight: 600;
+      color: var(--green); text-decoration: none; letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-sec); text-decoration: none; font-size: 0.875rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      padding: 0.45rem 1.1rem;
+      background: var(--green); color: #0d1117;
+      border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: var(--bg2); border-bottom: 1px solid var(--border);
+      padding: 1.5rem 5%; flex-direction: column; gap: 1.2rem; z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text-sec); text-decoration: none; font-size: 1rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 5%; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--mono); font-size: 0.78rem; color: var(--green);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700;
+      color: var(--text); line-height: 1.2; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--text-sec); max-width: 560px; font-size: 1rem; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding-top: 80px;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, #3ddc8415 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border: 1px solid var(--green-dim);
+      border-radius: 999px; font-size: 0.8rem; color: var(--green);
+      font-family: var(--mono); margin-bottom: 1.8rem;
+      background: rgba(61,220,132,0.06);
+    }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero-name {
+      font-size: clamp(2.6rem, 7vw, 4.2rem); font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .hero-name span { color: var(--green); }
+    .hero-title {
+      font-family: var(--mono); font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-sec); margin-bottom: 1.4rem;
+    }
+    .hero-desc {
+      font-size: 1.05rem; color: var(--text-sec); line-height: 1.75;
+      max-width: 580px; margin: 0 auto 2.2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 0.75rem 1.6rem; background: var(--green); color: #0d1117;
+      border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+      text-decoration: none; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 8px 24px var(--green-glow); }
+    .btn-outline {
+      padding: 0.75rem 1.6rem; border: 1px solid var(--border); color: var(--text);
+      border-radius: 8px; font-weight: 500; font-size: 0.95rem;
+      text-decoration: none; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 2.5rem; justify-content: center; margin-top: 3rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.7rem; font-weight: 700; color: var(--green); font-family: var(--mono); }
+    .stat-label { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .about-text p { color: var(--text-sec); margin-bottom: 1rem; line-height: 1.8; }
+    .about-code {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 1.6rem;
+      font-family: var(--mono); font-size: 0.82rem; line-height: 1.9;
+      overflow-x: auto;
+    }
+    .code-comment { color: #6e7681; }
+    .code-key { color: #79c0ff; }
+    .code-str { color: #a5d6ff; }
+    .code-green { color: var(--green); }
+    .code-purple { color: #d2a8ff; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+    .tag {
+      padding: 0.3rem 0.8rem; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 999px; font-size: 0.78rem; color: var(--text-sec);
+      font-family: var(--mono);
+    }
+
+    /* ── SKILLS ── */
+    #skills {}
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+    .skill-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { border-color: var(--green-dim); transform: translateY(-3px); }
+    .skill-card-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+    .skill-icon { font-size: 1.2rem; color: var(--green); }
+    .skill-card-title { font-weight: 600; font-size: 0.95rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      padding: 0.25rem 0.65rem; background: rgba(61,220,132,0.08);
+      border: 1px solid rgba(61,220,132,0.2); border-radius: 4px;
+      font-size: 0.75rem; color: var(--green); font-family: var(--mono);
+    }
+
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg2); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.4rem; margin-top: 2.5rem; }
+    .project-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.6rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--green-dim); transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(61,220,132,0.08);
+    }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .project-emoji { font-size: 1.6rem; }
+    .project-link {
+      color: var(--text-dim); text-decoration: none; font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .project-link:hover { color: var(--green); }
+    .project-name { font-weight: 600; font-size: 1.05rem; }
+    .project-desc { color: var(--text-sec); font-size: 0.875rem; line-height: 1.7; flex: 1; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .stack-tag {
+      padding: 0.2rem 0.55rem; background: var(--bg3);
+      border-radius: 4px; font-size: 0.72rem; color: var(--text-sec);
+      font-family: var(--mono); border: 1px solid var(--border);
+    }
+
+    /* ── SERVICES ── */
+    #services {}
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+    .service-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.6rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: var(--green-dim); transform: translateY(-3px); }
+    .service-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
+    .service-name { font-weight: 600; margin-bottom: 0.5rem; }
+    .service-desc { color: var(--text-sec); font-size: 0.875rem; line-height: 1.65; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg2); text-align: center; }
+    .contact-inner { max-width: 560px; margin: 0 auto; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.8rem 1.4rem; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); text-decoration: none; color: var(--text);
+      font-size: 0.9rem; font-weight: 500; transition: 0.2s;
+    }
+    .contact-link:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+    .contact-link i { font-size: 1rem; }
+    .contact-email {
+      display: inline-block; margin-top: 1.5rem; font-family: var(--mono);
+      font-size: 1rem; color: var(--green); text-decoration: none;
+    }
+    .contact-email:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem 5%;
+      text-align: center; color: var(--text-dim); font-size: 0.82rem;
+    }
+    footer span { color: var(--green); }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 5%; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .stat-num { font-size: 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
+      .stat { min-width: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">irfanullah.dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:irfanullah03330@gmail.com" class="nav-cta">Hire Me →</a>
+  <div class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="mailto:irfanullah03330@gmail.com" class="btn-primary" style="justify-content:center">Hire Me →</a>
 </div>
 
----
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner fade-in">
+    <div class="hero-badge">Available for Freelance · Remote Worldwide</div>
+    <h1 class="hero-name">Irfan <span>Ullah</span></h1>
+    <p class="hero-title">Android Developer · Kotlin · Jetpack Compose · Firebase</p>
+    <p class="hero-desc">
+      I build production-grade Android apps that ship, scale, and earn —
+      clean architecture, real users, delivered on time.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+      <a href="mailto:irfanullah03330@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> Start a Project</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years</div></div>
+      <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Apps Built</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Remote Ready</div></div>
+    </div>
+  </div>
+</section>
 
-## 🧑‍💻 About Me
-
-```kotlin
-data class Developer(
-    val name: String,
-    val role: String,
-    val location: String,
-    val languages: List<String>,
-    val architecture: List<String>,
-    val currentlyLearning: List<String>,
-    val mission: String
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p class="section-label">// about me</p>
+        <h2 class="section-title">Crafting Android Apps<br>People Actually Use</h2>
+        <p>I'm an Android Developer based in Islamabad, Pakistan, passionate about building apps that solve real problems with clean, maintainable code.</p>
+        <p>I specialize in Kotlin and Jetpack Compose, following MVVM and Clean Architecture patterns. From Firebase integration to Play Store publishing — I handle the full product lifecycle.</p>
+        <p>Currently open to freelance projects, long-term contracts, and full-time remote roles.</p>
+        <div class="about-tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">MVVM</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">Islamabad 🇵🇰</span>
+        </div>
+      </div>
+      <div class="about-code">
+<span class="code-comment">// who I am</span>
+<span class="code-purple">data class</span> <span class="code-green">Developer</span>(
+  <span class="code-key">val</span> name: <span class="code-str">String</span>,
+  <span class="code-key">val</span> role: <span class="code-str">String</span>,
+  <span class="code-key">val</span> location: <span class="code-str">String</span>,
+  <span class="code-key">val</span> stack: <span class="code-str">List&lt;String&gt;</span>,
+  <span class="code-key">val</span> openTo: <span class="code-str">String</span>
 )
 
-val irfanullah = Developer(
-    name              = "Irfanullah",
-    role              = "Android Developer",
-    location          = "Islamabad, Pakistan 🇵🇰",
-    languages         = listOf("Kotlin", "Java", "XML"),
-    architecture      = listOf("MVVM", "Clean Architecture", "Repository Pattern"),
-    currentlyLearning = listOf("Jetpack Compose", "Kotlin Coroutines & Flow", "Hilt DI"),
-    mission           = "Crafting clean, scalable, and user-first Android experiences 🚀"
+<span class="code-key">val</span> irfan = <span class="code-green">Developer</span>(
+  name     = <span class="code-str">"Irfan Ullah"</span>,
+  role     = <span class="code-str">"Android Developer"</span>,
+  location = <span class="code-str">"Islamabad, PK 🇵🇰"</span>,
+  stack    = <span class="code-purple">listOf</span>(
+    <span class="code-str">"Kotlin"</span>, <span class="code-str">"Jetpack Compose"</span>,
+    <span class="code-str">"MVVM"</span>, <span class="code-str">"Firebase"</span>,
+    <span class="code-str">"Hilt"</span>, <span class="code-str">"Coroutines"</span>
+  ),
+  openTo   = <span class="code-str">"Freelance &amp; Full-Time"</span>
 )
-```
+      </div>
+    </div>
+  </div>
+</section>
 
----
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">// tech stack</p>
+      <h2 class="section-title">What I Master</h2>
+      <p class="section-sub">Full Android development stack — from architecture to Play Store. Deep expertise in every layer.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-code skill-icon"></i>
+          <span class="skill-card-title">Core Languages</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">XML Layouts</span>
+          <span class="skill-tag">Kotlin DSL</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-layer-group skill-icon"></i>
+          <span class="skill-card-title">Architecture</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">MVVM</span>
+          <span class="skill-tag">Clean Architecture</span>
+          <span class="skill-tag">MVI</span>
+          <span class="skill-tag">Repository Pattern</span>
+          <span class="skill-tag">SOLID</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-mobile-alt skill-icon"></i>
+          <span class="skill-card-title">Jetpack / UI</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Jetpack Compose</span>
+          <span class="skill-tag">ViewModel</span>
+          <span class="skill-tag">LiveData</span>
+          <span class="skill-tag">Navigation</span>
+          <span class="skill-tag">Room DB</span>
+          <span class="skill-tag">DataStore</span>
+          <span class="skill-tag">WorkManager</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-cloud skill-icon"></i>
+          <span class="skill-card-title">Backend & APIs</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Retrofit</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">OkHttp</span>
+          <span class="skill-tag">Firestore</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-bolt skill-icon"></i>
+          <span class="skill-card-title">Performance & DI</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Coroutines</span>
+          <span class="skill-tag">Kotlin Flow</span>
+          <span class="skill-tag">Hilt / Dagger</span>
+          <span class="skill-tag">Glide / Coil</span>
+          <span class="skill-tag">Profiler</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <i class="fas fa-dollar-sign skill-icon"></i>
+          <span class="skill-card-title">Monetization & Deploy</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">AdMob</span>
+          <span class="skill-tag">In-App Purchases</span>
+          <span class="skill-tag">Play Store</span>
+          <span class="skill-tag">Gradle</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-## 🛠️ Tech Stack
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">// selected work</p>
+      <h2 class="section-title">Apps I've Shipped</h2>
+      <p class="section-sub">Real projects, real users. Each built with production quality and clean architecture.</p>
+    </div>
+    <div class="projects-grid">
 
-### Core
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![XML](https://img.shields.io/badge/XML-FF6600?style=for-the-badge&logo=xml&logoColor=white)
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">🎵</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link" title="View on GitHub"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">Music Player</div>
+        <div class="project-desc">Full-featured local music player with playlist management, equalizer, background playback service, and smooth animated UI.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">MediaPlayer</span>
+          <span class="stack-tag">Room DB</span>
+          <span class="stack-tag">Foreground Service</span>
+        </div>
+      </div>
 
-### Architecture & Patterns
-![MVVM](https://img.shields.io/badge/MVVM-0F6E56?style=for-the-badge&logo=android&logoColor=white)
-![Clean Architecture](https://img.shields.io/badge/Clean_Architecture-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Repository Pattern](https://img.shields.io/badge/Repository_Pattern-1D9E75?style=for-the-badge&logo=android&logoColor=white)
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">📷</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">QR Code Scanner</div>
+        <div class="project-desc">Lightning-fast QR & barcode scanner with history, bulk scan, and deep link handling using ML Kit & CameraX.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">ML Kit</span>
+          <span class="stack-tag">CameraX</span>
+          <span class="stack-tag">Firebase</span>
+        </div>
+      </div>
 
-### Jetpack & Libraries
-![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
-![LiveData](https://img.shields.io/badge/LiveData-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![ViewModel](https://img.shields.io/badge/ViewModel-0F6E56?style=for-the-badge&logo=android&logoColor=white)
-![Room](https://img.shields.io/badge/Room-FF6D00?style=for-the-badge&logo=sqlite&logoColor=white)
-![Navigation](https://img.shields.io/badge/Navigation-7F52FF?style=for-the-badge&logo=android&logoColor=white)
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">💪</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">Fitness Tracker</div>
+        <div class="project-desc">Workout tracker with exercise library, custom routines, MPAndroidChart progress graphs, and step counter sensor.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">MVVM</span>
+          <span class="stack-tag">Room</span>
+          <span class="stack-tag">MPAndroidChart</span>
+        </div>
+      </div>
 
-### Networking & Backend
-![Retrofit](https://img.shields.io/badge/Retrofit-48B983?style=for-the-badge&logo=square&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![REST API](https://img.shields.io/badge/REST_API-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">📄</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">All Document Reader</div>
+        <div class="project-desc">Universal document viewer — PDF, Word, Excel, PowerPoint — with search, bookmarks and AdMob monetization.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">PDF Renderer</span>
+          <span class="stack-tag">File Provider</span>
+          <span class="stack-tag">AdMob</span>
+        </div>
+      </div>
 
-### Monetization & Tools
-![AdMob](https://img.shields.io/badge/AdMob-EA4335?style=for-the-badge&logo=googleads&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=androidstudio&logoColor=white)
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">⬇️</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">Video Downloader</div>
+        <div class="project-desc">Multi-platform video downloader with quality selection, WorkManager download queue, and built-in ExoPlayer.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">Retrofit</span>
+          <span class="stack-tag">WorkManager</span>
+          <span class="stack-tag">ExoPlayer</span>
+        </div>
+      </div>
 
----
+      <div class="project-card fade-in">
+        <div class="project-top">
+          <span class="project-emoji">🤖</span>
+          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="project-name">Photo Fix AI</div>
+        <div class="project-desc">AI-powered photo enhancer with auto fix, noise reduction, upscaling, and smart filters via TensorFlow Lite.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Kotlin</span>
+          <span class="stack-tag">ML Kit</span>
+          <span class="stack-tag">TensorFlow Lite</span>
+          <span class="stack-tag">Coroutines</span>
+        </div>
+      </div>
 
-## 📊 GitHub Stats
+    </div>
+  </div>
+</section>
 
-<div align="center">
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">// what I offer</p>
+      <h2 class="section-title">Freelance Services</h2>
+      <p class="section-sub">End-to-end Android development — from idea to published app.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">📱</div>
+        <div class="service-name">App Development</div>
+        <div class="service-desc">Full Android app from scratch — UI, backend, APIs, testing, and Play Store submission.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">App Revamp / Bug Fix</div>
+        <div class="service-desc">Refactor legacy code, fix crashes, upgrade to modern Jetpack & Kotlin architecture.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">💰</div>
+        <div class="service-name">Monetization Setup</div>
+        <div class="service-desc">AdMob integration, in-app purchases, subscription billing — maximize your app revenue.</div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">🚀</div>
+        <div class="service-name">Play Store Launch</div>
+        <div class="service-desc">Full publishing setup — store listing, ASO, screenshots, and release management.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<img src="https://github-readme-stats.vercel.app/api?username=irfanullah-android&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=irfanullah-android&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" height="165" />
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner fade-in">
+      <p class="section-label">// contact</p>
+      <h2 class="section-title">Let's Build Together</h2>
+      <p class="section-sub" style="margin:0 auto;">Have a project? Open to freelance work, long-term contracts, and collaborations worldwide.</p>
+      <a href="mailto:irfanullah03330@gmail.com" class="contact-email">irfanullah03330@gmail.com</a>
+      <div class="contact-links">
+        <a href="mailto:irfanullah03330@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/irfan-ullah-521b5a250" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- ── FOOTER ── -->
+<footer>
+  <p>Built by <span>Irfan Ullah</span> · Islamabad, Pakistan 🇵🇰 · Android Developer · Available for Freelance</p>
+</footer>
 
-<div align="center">
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  function closeMobile() { mobileMenu.classList.remove('open'); }
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=irfanullah-android&theme=tokyonight&hide_border=true" />
-
-</div>
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=irfanullah-android&theme=tokyonight&no-frame=true&row=1&column=6&margin-w=8" />
-
-</div>
-
----
-
-## 🧱 What I Build
-
-| Area | What I Do |
-|------|-----------|
-| 📱 **Android Apps** | End-to-end production apps with polished UI and solid architecture |
-| 🔥 **Firebase Integration** | Auth, Firestore, Realtime DB, Cloud Functions |
-| 💰 **Monetization** | AdMob banner, interstitial & rewarded ads with proper lifecycle handling |
-| 🌐 **REST APIs** | Retrofit + OkHttp + Gson/Moshi with clean repository layer |
-| 🗄️ **Local Storage** | Room DB with migrations, DAO pattern, and offline-first design |
-| 🎨 **UI/UX** | Material 3, custom views, smooth animations, responsive layouts |
-
----
-
-## 📈 Activity Graph
-
-<div align="center">
-
-[![Irfanullah's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=irfanullah-android&theme=tokyo-night&hide_border=true&area=true)](https://github.com/irfanullah-android)
-
-</div>
-
----
-
-## 🤝 Let's Connect
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/irfan-ullah-521b5a250)
-[![Gmail](https://img.shields.io/badge/Gmail-Hire_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:irfanullah.android@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/irfanullah-android)
-
-</div>
-
----
-
-<div align="center">
-
-> *"First, solve the problem. Then, write the code."*
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F6E56,100:3DDC84&height=100&section=footer" />
-
-</div>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
