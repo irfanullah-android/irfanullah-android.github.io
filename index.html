@@ -1,287 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Irfan Ullah — Android Developer specializing in Kotlin, Jetpack Compose, Firebase & Clean Architecture. Available for freelance & full-time roles." />
-  <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Firebase, MVVM, Clean Architecture, Islamabad, Pakistan" />
-  <meta name="author" content="Irfan Ullah" />
-  <meta property="og:title" content="Irfan Ullah — Android Developer" />
-  <meta property="og:description" content="Building production-grade Android apps with Kotlin, Jetpack Compose & Firebase." />
-  <meta property="og:type" content="website" />
-  <title>Irfan Ullah — Android Developer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #0d1117;
-      --bg2:       #161b22;
-      --bg3:       #21262d;
-      --border:    #30363d;
-      --green:     #3ddc84;
-      --green-dim: #1d9e5c;
-      --green-glow:#3ddc8430;
-      --text:      #e6edf3;
-      --text-sec:  #8b949e;
-      --text-dim:  #656d76;
-      --radius:    12px;
-      --mono:      'JetBrains Mono', monospace;
-      --sans:      'Inter', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--green-dim); border-radius: 3px; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5%; height: 64px;
-      background: rgba(13,17,23,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: var(--mono); font-size: 1rem; font-weight: 600;
-      color: var(--green); text-decoration: none; letter-spacing: 0.02em;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--text-sec); text-decoration: none; font-size: 0.875rem;
-      font-weight: 500; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--green); }
-    .nav-cta {
-      padding: 0.45rem 1.1rem;
-      background: var(--green); color: #0d1117;
-      border-radius: 6px; font-size: 0.85rem; font-weight: 600;
-      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-    .mobile-menu {
-      display: none; position: fixed; top: 64px; left: 0; right: 0;
-      background: var(--bg2); border-bottom: 1px solid var(--border);
-      padding: 1.5rem 5%; flex-direction: column; gap: 1.2rem; z-index: 99;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { color: var(--text-sec); text-decoration: none; font-size: 1rem; }
-
-    /* ── SECTIONS ── */
-    section { padding: 6rem 5%; }
-    .container { max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-family: var(--mono); font-size: 0.78rem; color: var(--green);
-      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700;
-      color: var(--text); line-height: 1.2; margin-bottom: 1rem;
-    }
-    .section-sub { color: var(--text-sec); max-width: 560px; font-size: 1rem; }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding-top: 80px;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, #3ddc8415 0%, transparent 70%);
-    }
-    .hero-inner { max-width: 720px; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.4rem 1rem; border: 1px solid var(--green-dim);
-      border-radius: 999px; font-size: 0.8rem; color: var(--green);
-      font-family: var(--mono); margin-bottom: 1.8rem;
-      background: rgba(61,220,132,0.06);
-    }
-    .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero-name {
-      font-size: clamp(2.6rem, 7vw, 4.2rem); font-weight: 700; line-height: 1.1;
-      letter-spacing: -0.02em; margin-bottom: 1rem;
-    }
-    .hero-name span { color: var(--green); }
-    .hero-title {
-      font-family: var(--mono); font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: var(--text-sec); margin-bottom: 1.4rem;
-    }
-    .hero-desc {
-      font-size: 1.05rem; color: var(--text-sec); line-height: 1.75;
-      max-width: 580px; margin: 0 auto 2.2rem;
-    }
-    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      padding: 0.75rem 1.6rem; background: var(--green); color: #0d1117;
-      border-radius: 8px; font-weight: 600; font-size: 0.95rem;
-      text-decoration: none; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 8px 24px var(--green-glow); }
-    .btn-outline {
-      padding: 0.75rem 1.6rem; border: 1px solid var(--border); color: var(--text);
-      border-radius: 8px; font-weight: 500; font-size: 0.95rem;
-      text-decoration: none; transition: 0.2s; display: inline-flex; align-items: center; gap: 0.5rem;
-    }
-    .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
-    .hero-stats {
-      display: flex; gap: 2.5rem; justify-content: center; margin-top: 3rem;
-      padding-top: 2rem; border-top: 1px solid var(--border);
-    }
-    .stat { text-align: center; }
-    .stat-num { font-size: 1.7rem; font-weight: 700; color: var(--green); font-family: var(--mono); }
-    .stat-label { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
-
-    /* ── ABOUT ── */
-    #about { background: var(--bg2); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .about-text p { color: var(--text-sec); margin-bottom: 1rem; line-height: 1.8; }
-    .about-code {
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.4rem 1.6rem;
-      font-family: var(--mono); font-size: 0.82rem; line-height: 1.9;
-      overflow-x: auto;
-    }
-    .code-comment { color: #6e7681; }
-    .code-key { color: #79c0ff; }
-    .code-str { color: #a5d6ff; }
-    .code-green { color: var(--green); }
-    .code-purple { color: #d2a8ff; }
-    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
-    .tag {
-      padding: 0.3rem 0.8rem; background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 999px; font-size: 0.78rem; color: var(--text-sec);
-      font-family: var(--mono);
-    }
-
-    /* ── SKILLS ── */
-    #skills {}
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
-    .skill-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.4rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .skill-card:hover { border-color: var(--green-dim); transform: translateY(-3px); }
-    .skill-card-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
-    .skill-icon { font-size: 1.2rem; color: var(--green); }
-    .skill-card-title { font-weight: 600; font-size: 0.95rem; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .skill-tag {
-      padding: 0.25rem 0.65rem; background: rgba(61,220,132,0.08);
-      border: 1px solid rgba(61,220,132,0.2); border-radius: 4px;
-      font-size: 0.75rem; color: var(--green); font-family: var(--mono);
-    }
-
-    /* ── PROJECTS ── */
-    #projects { background: var(--bg2); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.4rem; margin-top: 2.5rem; }
-    .project-card {
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.6rem;
-      display: flex; flex-direction: column; gap: 1rem;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .project-card:hover {
-      border-color: var(--green-dim); transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(61,220,132,0.08);
-    }
-    .project-top { display: flex; justify-content: space-between; align-items: flex-start; }
-    .project-emoji { font-size: 1.6rem; }
-    .project-link {
-      color: var(--text-dim); text-decoration: none; font-size: 1rem;
-      transition: color 0.2s;
-    }
-    .project-link:hover { color: var(--green); }
-    .project-name { font-weight: 600; font-size: 1.05rem; }
-    .project-desc { color: var(--text-sec); font-size: 0.875rem; line-height: 1.7; flex: 1; }
-    .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .stack-tag {
-      padding: 0.2rem 0.55rem; background: var(--bg3);
-      border-radius: 4px; font-size: 0.72rem; color: var(--text-sec);
-      font-family: var(--mono); border: 1px solid var(--border);
-    }
-
-    /* ── SERVICES ── */
-    #services {}
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
-    .service-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.6rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .service-card:hover { border-color: var(--green-dim); transform: translateY(-3px); }
-    .service-icon { font-size: 1.5rem; margin-bottom: 0.8rem; }
-    .service-name { font-weight: 600; margin-bottom: 0.5rem; }
-    .service-desc { color: var(--text-sec); font-size: 0.875rem; line-height: 1.65; }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--bg2); text-align: center; }
-    .contact-inner { max-width: 560px; margin: 0 auto; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 2rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: 0.6rem;
-      padding: 0.8rem 1.4rem; background: var(--bg); border: 1px solid var(--border);
-      border-radius: var(--radius); text-decoration: none; color: var(--text);
-      font-size: 0.9rem; font-weight: 500; transition: 0.2s;
-    }
-    .contact-link:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
-    .contact-link i { font-size: 1rem; }
-    .contact-email {
-      display: inline-block; margin-top: 1.5rem; font-family: var(--mono);
-      font-size: 1rem; color: var(--green); text-decoration: none;
-    }
-    .contact-email:hover { text-decoration: underline; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border); padding: 2rem 5%;
-      text-align: center; color: var(--text-dim); font-size: 0.82rem;
-    }
-    footer span { color: var(--green); }
-
-    /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      section { padding: 4rem 5%; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-stats { gap: 1.5rem; }
-      .stat-num { font-size: 1.4rem; }
-    }
-    @media (max-width: 480px) {
-      .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
-      .stat { min-width: 80px; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Irfan Ullah — Android Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#0d1117;color:#e6edf3}
+nav{position:fixed;top:0;left:0;right:0;padding:1rem 5%;background:rgba(13,17,23,0.95);border-bottom:1px solid #30363d;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.logo{color:#3ddc84;font-weight:700;font-size:1rem;text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:#8b949e;text-decoration:none;font-size:0.875rem}
+.nav-links a:hover{color:#3ddc84}
+.hire-btn{background:#3ddc84;color:#0d1117;padding:0.4rem 1rem;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.85rem}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 5% 4rem}
+.badge{display:inline-block;padding:0.4rem 1rem;border:1px solid #3ddc84;border-radius:999px;color:#3ddc84;font-size:0.8rem;margin-bottom:1.5rem}
+h1{font-size:clamp(2.5rem,7vw,4rem);font-weight:700;margin-bottom:1rem}
+h1 span{color:#3ddc84}
+.subtitle{color:#8b949e;font-size:1.1rem;margin-bottom:1rem;font-family:monospace}
+.desc{color:#8b949e;max-width:560px;margin:0 auto 2rem;line-height:1.75}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn1{background:#3ddc84;color:#0d1117;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none}
+.btn2{border:1px solid #30363d;color:#e6edf3;padding:0.75rem 1.5rem;border-radius:8px;text-decoration:none}
+.stats{display:flex;gap:3rem;justify-content:center;margin-top:3rem;padding-top:2rem;border-top:1px solid #30363d}
+.stat-num{font-size:1.8rem;font-weight:700;color:#3ddc84}
+.stat-label{font-size:0.75rem;color:#656d76;text-transform:uppercase}
+section{padding:5rem 5%}
+.container{max-width:1100px;margin:0 auto}
+.sec-label{color:#3ddc84;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;font-family:monospace}
+.sec-title{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:1rem}
+.sec-sub{color:#8b949e;max-width:540px}
+.bg2{background:#161b22}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2rem}
+.about-text p{color:#8b949e;margin-bottom:1rem;line-height:1.8}
+.code-box{background:#0d1117;border:1px solid #30363d;border-radius:12px;padding:1.5rem;font-family:monospace;font-size:0.82rem;line-height:2}
+.ck{color:#79c0ff}.cs{color:#a5d6ff}.cg{color:#3ddc84}.cp{color:#d2a8ff}.cc{color:#6e7681}
+.tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+.tag{padding:0.3rem 0.8rem;background:#21262d;border:1px solid #30363d;border-radius:999px;font-size:0.78rem;color:#8b949e;font-family:monospace}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2rem}
+.skill-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:1.4rem;transition:0.2s}
+.skill-card:hover{border-color:#3ddc84;transform:translateY(-3px)}
+.skill-head{display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;font-weight:600}
+.skill-icon{color:#3ddc84;font-size:1.1rem}
+.stags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.stag{padding:0.25rem 0.6rem;background:rgba(61,220,132,0.08);border:1px solid rgba(61,220,132,0.2);border-radius:4px;font-size:0.75rem;color:#3ddc84;font-family:monospace}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem;margin-top:2rem}
+.pcard{background:#0d1117;border:1px solid #30363d;border-radius:12px;padding:1.5rem;transition:0.2s;display:flex;flex-direction:column;gap:0.8rem}
+.pcard:hover{border-color:#3ddc84;transform:translateY(-4px)}
+.ptop{display:flex;justify-content:space-between}
+.pemoji{font-size:1.5rem}
+.plink{color:#656d76;text-decoration:none;font-size:0.9rem}
+.plink:hover{color:#3ddc84}
+.pname{font-weight:600;font-size:1rem}
+.pdesc{color:#8b949e;font-size:0.875rem;line-height:1.65;flex:1}
+.ptags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.ptag{padding:0.2rem 0.55rem;background:#21262d;border:1px solid #30363d;border-radius:4px;font-size:0.72rem;color:#8b949e;font-family:monospace}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:2rem}
+.scard{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:1.5rem;transition:0.2s}
+.scard:hover{border-color:#3ddc84;transform:translateY(-3px)}
+.sicon{font-size:1.5rem;margin-bottom:0.8rem}
+.sname{font-weight:600;margin-bottom:0.5rem}
+.sdesc{color:#8b949e;font-size:0.875rem;line-height:1.65}
+#contact{text-align:center}
+.contact-inner{max-width:500px;margin:0 auto}
+.cemail{display:block;color:#3ddc84;font-family:monospace;font-size:1rem;margin-top:1rem;text-decoration:none}
+.clinks{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:1.5rem}
+.clink{display:flex;align-items:center;gap:0.5rem;padding:0.75rem 1.3rem;background:#161b22;border:1px solid #30363d;border-radius:12px;text-decoration:none;color:#e6edf3;font-size:0.9rem;transition:0.2s}
+.clink:hover{border-color:#3ddc84;color:#3ddc84}
+footer{border-top:1px solid #30363d;padding:1.5rem 5%;text-align:center;color:#656d76;font-size:0.82rem}
+footer span{color:#3ddc84}
+@media(max-width:768px){.nav-links{display:none}.about-grid{grid-template-columns:1fr}.stats{gap:1.5rem}}
+</style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
-  <a href="#hero" class="nav-logo">irfanullah.dev</a>
+  <a href="#hero" class="logo">irfanullah.dev</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -289,356 +83,125 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:irfanullah03330@gmail.com" class="nav-cta">Hire Me →</a>
-  <div class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </div>
+  <a href="mailto:irfanullah03330@gmail.com" class="hire-btn">Hire Me →</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#skills" onclick="closeMobile()">Skills</a>
-  <a href="#projects" onclick="closeMobile()">Projects</a>
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="mailto:irfanullah03330@gmail.com" class="btn-primary" style="justify-content:center">Hire Me →</a>
-</div>
 
-<!-- ── HERO ── -->
 <section id="hero">
-  <div class="hero-inner fade-in">
-    <div class="hero-badge">Available for Freelance · Remote Worldwide</div>
-    <h1 class="hero-name">Irfan <span>Ullah</span></h1>
-    <p class="hero-title">Android Developer · Kotlin · Jetpack Compose · Firebase</p>
-    <p class="hero-desc">
-      I build production-grade Android apps that ship, scale, and earn —
-      clean architecture, real users, delivered on time.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
-      <a href="mailto:irfanullah03330@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> Start a Project</a>
+  <div>
+    <div class="badge">● Available for Freelance · Remote Worldwide</div>
+    <h1>Irfan <span>Ullah</span></h1>
+    <p class="subtitle">Android Developer · Kotlin · Jetpack Compose · Firebase</p>
+    <p class="desc">I build production-grade Android apps that ship, scale, and earn — clean architecture, real users, delivered on time.</p>
+    <div class="btns">
+      <a href="#projects" class="btn1">View My Work →</a>
+      <a href="mailto:irfanullah03330@gmail.com" class="btn2">Start a Project</a>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years</div></div>
-      <div class="stat"><div class="stat-num">7+</div><div class="stat-label">Apps Built</div></div>
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Remote Ready</div></div>
+    <div class="stats">
+      <div><div class="stat-num">2+</div><div class="stat-label">Years</div></div>
+      <div><div class="stat-num">7+</div><div class="stat-label">Apps Built</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Remote Ready</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
-<section id="about">
+<section id="about" class="bg2">
   <div class="container">
-    <div class="about-grid fade-in">
+    <div class="about-grid">
       <div class="about-text">
-        <p class="section-label">// about me</p>
-        <h2 class="section-title">Crafting Android Apps<br>People Actually Use</h2>
+        <p class="sec-label">// about me</p>
+        <h2 class="sec-title">Crafting Android Apps People Actually Use</h2>
         <p>I'm an Android Developer based in Islamabad, Pakistan, passionate about building apps that solve real problems with clean, maintainable code.</p>
         <p>I specialize in Kotlin and Jetpack Compose, following MVVM and Clean Architecture patterns. From Firebase integration to Play Store publishing — I handle the full product lifecycle.</p>
         <p>Currently open to freelance projects, long-term contracts, and full-time remote roles.</p>
-        <div class="about-tags">
-          <span class="tag">Kotlin</span>
-          <span class="tag">Jetpack Compose</span>
-          <span class="tag">MVVM</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">Clean Architecture</span>
-          <span class="tag">Islamabad 🇵🇰</span>
+        <div class="tags">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span><span class="tag">Firebase</span><span class="tag">Clean Architecture</span><span class="tag">Islamabad 🇵🇰</span>
         </div>
       </div>
-      <div class="about-code">
-<span class="code-comment">// who I am</span>
-<span class="code-purple">data class</span> <span class="code-green">Developer</span>(
-  <span class="code-key">val</span> name: <span class="code-str">String</span>,
-  <span class="code-key">val</span> role: <span class="code-str">String</span>,
-  <span class="code-key">val</span> location: <span class="code-str">String</span>,
-  <span class="code-key">val</span> stack: <span class="code-str">List&lt;String&gt;</span>,
-  <span class="code-key">val</span> openTo: <span class="code-str">String</span>
+      <div class="code-box">
+<span class="cc">// who I am</span>
+<span class="cp">data class</span> <span class="cg">Developer</span>(
+  <span class="ck">val</span> name: <span class="cs">String</span>,
+  <span class="ck">val</span> role: <span class="cs">String</span>,
+  <span class="ck">val</span> location: <span class="cs">String</span>,
+  <span class="ck">val</span> openTo: <span class="cs">String</span>
 )
 
-<span class="code-key">val</span> irfan = <span class="code-green">Developer</span>(
-  name     = <span class="code-str">"Irfan Ullah"</span>,
-  role     = <span class="code-str">"Android Developer"</span>,
-  location = <span class="code-str">"Islamabad, PK 🇵🇰"</span>,
-  stack    = <span class="code-purple">listOf</span>(
-    <span class="code-str">"Kotlin"</span>, <span class="code-str">"Jetpack Compose"</span>,
-    <span class="code-str">"MVVM"</span>, <span class="code-str">"Firebase"</span>,
-    <span class="code-str">"Hilt"</span>, <span class="code-str">"Coroutines"</span>
-  ),
-  openTo   = <span class="code-str">"Freelance &amp; Full-Time"</span>
+<span class="ck">val</span> irfan = <span class="cg">Developer</span>(
+  name = <span class="cs">"Irfan Ullah"</span>,
+  role = <span class="cs">"Android Developer"</span>,
+  location = <span class="cs">"Islamabad, PK 🇵🇰"</span>,
+  openTo = <span class="cs">"Freelance &amp; Full-Time"</span>
 )
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── SKILLS ── -->
 <section id="skills">
   <div class="container">
-    <div class="fade-in">
-      <p class="section-label">// tech stack</p>
-      <h2 class="section-title">What I Master</h2>
-      <p class="section-sub">Full Android development stack — from architecture to Play Store. Deep expertise in every layer.</p>
-    </div>
+    <p class="sec-label">// tech stack</p>
+    <h2 class="sec-title">What I Master</h2>
+    <p class="sec-sub">Full Android development stack — from architecture to Play Store.</p>
     <div class="skills-grid">
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-code skill-icon"></i>
-          <span class="skill-card-title">Core Languages</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">XML Layouts</span>
-          <span class="skill-tag">Kotlin DSL</span>
-        </div>
-      </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-layer-group skill-icon"></i>
-          <span class="skill-card-title">Architecture</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">MVVM</span>
-          <span class="skill-tag">Clean Architecture</span>
-          <span class="skill-tag">MVI</span>
-          <span class="skill-tag">Repository Pattern</span>
-          <span class="skill-tag">SOLID</span>
-        </div>
-      </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-mobile-alt skill-icon"></i>
-          <span class="skill-card-title">Jetpack / UI</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Jetpack Compose</span>
-          <span class="skill-tag">ViewModel</span>
-          <span class="skill-tag">LiveData</span>
-          <span class="skill-tag">Navigation</span>
-          <span class="skill-tag">Room DB</span>
-          <span class="skill-tag">DataStore</span>
-          <span class="skill-tag">WorkManager</span>
-        </div>
-      </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-cloud skill-icon"></i>
-          <span class="skill-card-title">Backend & APIs</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Firebase</span>
-          <span class="skill-tag">Retrofit</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">OkHttp</span>
-          <span class="skill-tag">Firestore</span>
-        </div>
-      </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-bolt skill-icon"></i>
-          <span class="skill-card-title">Performance & DI</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Coroutines</span>
-          <span class="skill-tag">Kotlin Flow</span>
-          <span class="skill-tag">Hilt / Dagger</span>
-          <span class="skill-tag">Glide / Coil</span>
-          <span class="skill-tag">Profiler</span>
-        </div>
-      </div>
-      <div class="skill-card fade-in">
-        <div class="skill-card-header">
-          <i class="fas fa-dollar-sign skill-icon"></i>
-          <span class="skill-card-title">Monetization & Deploy</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">AdMob</span>
-          <span class="skill-tag">In-App Purchases</span>
-          <span class="skill-tag">Play Store</span>
-          <span class="skill-tag">Gradle</span>
-          <span class="skill-tag">CI/CD</span>
-        </div>
-      </div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">⚡</span>Core Languages</div><div class="stags"><span class="stag">Kotlin</span><span class="stag">Java</span><span class="stag">XML</span><span class="stag">Kotlin DSL</span></div></div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">🏗️</span>Architecture</div><div class="stags"><span class="stag">MVVM</span><span class="stag">Clean Architecture</span><span class="stag">MVI</span><span class="stag">SOLID</span></div></div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">🎨</span>Jetpack / UI</div><div class="stags"><span class="stag">Jetpack Compose</span><span class="stag">ViewModel</span><span class="stag">LiveData</span><span class="stag">Room DB</span><span class="stag">Navigation</span></div></div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">🌐</span>Backend & APIs</div><div class="stags"><span class="stag">Firebase</span><span class="stag">Retrofit</span><span class="stag">REST APIs</span><span class="stag">OkHttp</span><span class="stag">Firestore</span></div></div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">🚀</span>Performance & DI</div><div class="stags"><span class="stag">Coroutines</span><span class="stag">Kotlin Flow</span><span class="stag">Hilt/Dagger</span><span class="stag">Glide/Coil</span></div></div>
+      <div class="skill-card"><div class="skill-head"><span class="skill-icon">💰</span>Monetization</div><div class="stags"><span class="stag">AdMob</span><span class="stag">In-App Purchases</span><span class="stag">Play Store</span><span class="stag">CI/CD</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ── PROJECTS ── -->
-<section id="projects">
+<section id="projects" class="bg2">
   <div class="container">
-    <div class="fade-in">
-      <p class="section-label">// selected work</p>
-      <h2 class="section-title">Apps I've Shipped</h2>
-      <p class="section-sub">Real projects, real users. Each built with production quality and clean architecture.</p>
-    </div>
+    <p class="sec-label">// selected work</p>
+    <h2 class="sec-title">Apps I've Shipped</h2>
+    <p class="sec-sub">Real projects, real users. Each built with production quality.</p>
     <div class="projects-grid">
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">🎵</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link" title="View on GitHub"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">Music Player</div>
-        <div class="project-desc">Full-featured local music player with playlist management, equalizer, background playback service, and smooth animated UI.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">MediaPlayer</span>
-          <span class="stack-tag">Room DB</span>
-          <span class="stack-tag">Foreground Service</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">📷</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">QR Code Scanner</div>
-        <div class="project-desc">Lightning-fast QR & barcode scanner with history, bulk scan, and deep link handling using ML Kit & CameraX.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">ML Kit</span>
-          <span class="stack-tag">CameraX</span>
-          <span class="stack-tag">Firebase</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">💪</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">Fitness Tracker</div>
-        <div class="project-desc">Workout tracker with exercise library, custom routines, MPAndroidChart progress graphs, and step counter sensor.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">MVVM</span>
-          <span class="stack-tag">Room</span>
-          <span class="stack-tag">MPAndroidChart</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">📄</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">All Document Reader</div>
-        <div class="project-desc">Universal document viewer — PDF, Word, Excel, PowerPoint — with search, bookmarks and AdMob monetization.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">PDF Renderer</span>
-          <span class="stack-tag">File Provider</span>
-          <span class="stack-tag">AdMob</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">⬇️</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">Video Downloader</div>
-        <div class="project-desc">Multi-platform video downloader with quality selection, WorkManager download queue, and built-in ExoPlayer.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">Retrofit</span>
-          <span class="stack-tag">WorkManager</span>
-          <span class="stack-tag">ExoPlayer</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in">
-        <div class="project-top">
-          <span class="project-emoji">🤖</span>
-          <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="project-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-        </div>
-        <div class="project-name">Photo Fix AI</div>
-        <div class="project-desc">AI-powered photo enhancer with auto fix, noise reduction, upscaling, and smart filters via TensorFlow Lite.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span>
-          <span class="stack-tag">ML Kit</span>
-          <span class="stack-tag">TensorFlow Lite</span>
-          <span class="stack-tag">Coroutines</span>
-        </div>
-      </div>
-
+      <div class="pcard"><div class="ptop"><span class="pemoji">🎵</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">Music Player</div><div class="pdesc">Full-featured local music player with playlist management, equalizer, background playback and smooth animated UI.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">MediaPlayer</span><span class="ptag">Room DB</span><span class="ptag">Foreground Service</span></div></div>
+      <div class="pcard"><div class="ptop"><span class="pemoji">📷</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">QR Code Scanner</div><div class="pdesc">Lightning-fast QR & barcode scanner with history, bulk scan, and deep link handling using ML Kit & CameraX.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">ML Kit</span><span class="ptag">CameraX</span><span class="ptag">Firebase</span></div></div>
+      <div class="pcard"><div class="ptop"><span class="pemoji">💪</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">Fitness Tracker</div><div class="pdesc">Workout tracker with exercise library, custom routines, MPAndroidChart progress graphs, and step counter.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">MVVM</span><span class="ptag">Room</span><span class="ptag">MPAndroidChart</span></div></div>
+      <div class="pcard"><div class="ptop"><span class="pemoji">📄</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">All Document Reader</div><div class="pdesc">Universal document viewer — PDF, Word, Excel, PowerPoint — with search, bookmarks and AdMob monetization.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">PDF Renderer</span><span class="ptag">File Provider</span><span class="ptag">AdMob</span></div></div>
+      <div class="pcard"><div class="ptop"><span class="pemoji">⬇️</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">Video Downloader</div><div class="pdesc">Multi-platform video downloader with quality selection, WorkManager queue, and built-in ExoPlayer.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">Retrofit</span><span class="ptag">WorkManager</span><span class="ptag">ExoPlayer</span></div></div>
+      <div class="pcard"><div class="ptop"><span class="pemoji">🤖</span><a href="https://github.com/irfanullah-android" target="_blank" class="plink">↗</a></div><div class="pname">Photo Fix AI</div><div class="pdesc">AI-powered photo enhancer with auto fix, noise reduction, upscaling and smart filters via TensorFlow Lite.</div><div class="ptags"><span class="ptag">Kotlin</span><span class="ptag">ML Kit</span><span class="ptag">TensorFlow Lite</span><span class="ptag">Coroutines</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ── SERVICES ── -->
 <section id="services">
   <div class="container">
-    <div class="fade-in">
-      <p class="section-label">// what I offer</p>
-      <h2 class="section-title">Freelance Services</h2>
-      <p class="section-sub">End-to-end Android development — from idea to published app.</p>
-    </div>
+    <p class="sec-label">// what I offer</p>
+    <h2 class="sec-title">Freelance Services</h2>
+    <p class="sec-sub">End-to-end Android development — from idea to published app.</p>
     <div class="services-grid">
-      <div class="service-card fade-in">
-        <div class="service-icon">📱</div>
-        <div class="service-name">App Development</div>
-        <div class="service-desc">Full Android app from scratch — UI, backend, APIs, testing, and Play Store submission.</div>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🔧</div>
-        <div class="service-name">App Revamp / Bug Fix</div>
-        <div class="service-desc">Refactor legacy code, fix crashes, upgrade to modern Jetpack & Kotlin architecture.</div>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">💰</div>
-        <div class="service-name">Monetization Setup</div>
-        <div class="service-desc">AdMob integration, in-app purchases, subscription billing — maximize your app revenue.</div>
-      </div>
-      <div class="service-card fade-in">
-        <div class="service-icon">🚀</div>
-        <div class="service-name">Play Store Launch</div>
-        <div class="service-desc">Full publishing setup — store listing, ASO, screenshots, and release management.</div>
-      </div>
+      <div class="scard"><div class="sicon">📱</div><div class="sname">App Development</div><div class="sdesc">Full Android app from scratch — UI, backend, APIs, testing, and Play Store submission.</div></div>
+      <div class="scard"><div class="sicon">🔧</div><div class="sname">App Revamp / Bug Fix</div><div class="sdesc">Refactor legacy code, fix crashes, upgrade to modern Jetpack & Kotlin architecture.</div></div>
+      <div class="scard"><div class="sicon">💰</div><div class="sname">Monetization Setup</div><div class="sdesc">AdMob integration, in-app purchases, subscription billing — maximize your app revenue.</div></div>
+      <div class="scard"><div class="sicon">🚀</div><div class="sname">Play Store Launch</div><div class="sdesc">Full publishing setup — store listing, ASO, screenshots, and release management.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
-<section id="contact">
+<section id="contact" class="bg2">
   <div class="container">
-    <div class="contact-inner fade-in">
-      <p class="section-label">// contact</p>
-      <h2 class="section-title">Let's Build Together</h2>
-      <p class="section-sub" style="margin:0 auto;">Have a project? Open to freelance work, long-term contracts, and collaborations worldwide.</p>
-      <a href="mailto:irfanullah03330@gmail.com" class="contact-email">irfanullah03330@gmail.com</a>
-      <div class="contact-links">
-        <a href="mailto:irfanullah03330@gmail.com" class="contact-link">
-          <i class="fas fa-envelope"></i> Email Me
-        </a>
-        <a href="https://www.linkedin.com/in/irfan-ullah-521b5a250" target="_blank" rel="noopener" class="contact-link">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/irfanullah-android" target="_blank" rel="noopener" class="contact-link">
-          <i class="fab fa-github"></i> GitHub
-        </a>
+    <div class="contact-inner">
+      <p class="sec-label">// contact</p>
+      <h2 class="sec-title">Let's Build Together</h2>
+      <p class="sec-sub" style="margin:0 auto">Open to freelance work, long-term contracts, and collaborations worldwide.</p>
+      <a href="mailto:irfanullah03330@gmail.com" class="cemail">irfanullah03330@gmail.com</a>
+      <div class="clinks">
+        <a href="mailto:irfanullah03330@gmail.com" class="clink">✉ Email Me</a>
+        <a href="https://www.linkedin.com/in/irfan-ullah-521b5a250" target="_blank" class="clink">💼 LinkedIn</a>
+        <a href="https://github.com/irfanullah-android" target="_blank" class="clink">⌨ GitHub</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <p>Built by <span>Irfan Ullah</span> · Islamabad, Pakistan 🇵🇰 · Android Developer · Available for Freelance</p>
 </footer>
 
-<script>
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  function closeMobile() { mobileMenu.classList.remove('open'); }
-
-  // Scroll fade-in
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
